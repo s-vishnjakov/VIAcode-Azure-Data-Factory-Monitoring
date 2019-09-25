@@ -1,0 +1,83 @@
+{
+	"swagger": "2.0",
+	"info": {
+		"title": "VIAcode Azure Data Factory Monitoring API",
+		"version": "1.0",
+		"description": "Azure Data Factory Monitoring is the unique tool from VIAcode, integrated with the Azure Portal providing the monitoring capabilities for Azure Data Factory. It includes monitoring scenarios for Azure Data Factory Activities, Pipelines and Triggers. 
+This application enterprise IT team will be able to quickly detect and diagnose Azure Data Factory service and workflows failure and recover it in no time."
+	},
+	"schemes": [
+		"https"
+	],
+	"securityDefinitions": {
+		"apiKeyHeader": {
+			"type": "apiKey",
+			"name": "Ocp-Apim-Subscription-Key",
+			"in": "header"
+		},
+		"apiKeyQuery": {
+			"type": "apiKey",
+			"name": "subscription-key",
+			"in": "query"
+		}
+	},
+	"security": [
+		{
+			"apiKeyHeader": []
+		},
+		{
+			"apiKeyQuery": []
+		}
+	],
+	"paths": {
+		"/AdfInstances": {
+			"get": {
+				"operationId": "get-adfinstances",
+				"summary": "AdfInstances",
+				"responses": {
+					"200": {
+						"description": "Empty HTTP 200 status code",
+						"schema": {
+						}
+					}
+				}
+			},
+			"put": {
+				"operationId": "put-adfinstances",
+				"summary": "AdfInstances",
+				"responses": {
+					"200": {
+						"description": "Empty HTTP 200 status code",
+						"schema": {
+						}
+					}
+				}
+			},
+			"delete": {
+				"operationId": "delete-adfinstances",
+				"summary": "AdfInstances",
+				"responses": {
+					"200": {
+						"description": "Empty HTTP 200 status code",
+						"schema": {
+						}
+					}
+				}
+			}
+		},
+		"/ChangeState": {
+			"post": {
+				"operationId": "post-changestate",
+				"summary": "ChangeState",
+				"responses": {
+					"200": {
+						"description": "Empty HTTP 200 status code",
+						"schema": {
+						}
+					}
+				}
+			}
+		}
+	},
+	"tags": []
+}
