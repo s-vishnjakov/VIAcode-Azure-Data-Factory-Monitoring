@@ -6,6 +6,7 @@
 		"description": "Azure Data Factory Monitoring is the unique tool from VIAcode, integrated with the Azure Portal providing the monitoring capabilities for Azure Data Factory. It includes monitoring scenarios for Azure Data Factory Activities, Pipelines and Triggers. 
 This application enterprise IT team will be able to quickly detect and diagnose Azure Data Factory service and workflows failure and recover it in no time."
 	},
+	"host": "management.azure.com",
 	"schemes": [
 		"https"
 	],
