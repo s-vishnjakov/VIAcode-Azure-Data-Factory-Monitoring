@@ -1,84 +1,133 @@
 {
-	"swagger": "2.0",
-	"info": {
-		"title": "VIAcode Azure Data Factory Monitoring API",
-		"version": "1.0",
-		"description": "Azure Data Factory Monitoring is the unique tool from VIAcode, integrated with the Azure Portal providing the monitoring capabilities for Azure Data Factory. It includes monitoring scenarios for Azure Data Factory Activities, Pipelines and Triggers. 
-This application enterprise IT team will be able to quickly detect and diagnose Azure Data Factory service and workflows failure and recover it in no time."
-	},
-	"host": "management.azure.com",
-	"schemes": [
-		"https"
-	],
-	"securityDefinitions": {
-		"apiKeyHeader": {
-			"type": "apiKey",
-			"name": "Ocp-Apim-Subscription-Key",
-			"in": "header"
-		},
-		"apiKeyQuery": {
-			"type": "apiKey",
-			"name": "subscription-key",
-			"in": "query"
-		}
-	},
-	"security": [
-		{
-			"apiKeyHeader": []
-		},
-		{
-			"apiKeyQuery": []
-		}
-	],
-	"paths": {
-		"/AdfInstances": {
-			"get": {
-				"operationId": "get-adfinstances",
-				"summary": "AdfInstances",
-				"responses": {
-					"200": {
-						"description": "Empty HTTP 200 status code",
-						"schema": {
-						}
-					}
-				}
-			},
-			"put": {
-				"operationId": "put-adfinstances",
-				"summary": "AdfInstances",
-				"responses": {
-					"200": {
-						"description": "Empty HTTP 200 status code",
-						"schema": {
-						}
-					}
-				}
-			},
-			"delete": {
-				"operationId": "delete-adfinstances",
-				"summary": "AdfInstances",
-				"responses": {
-					"200": {
-						"description": "Empty HTTP 200 status code",
-						"schema": {
-						}
-					}
-				}
-			}
-		},
-		"/ChangeState": {
-			"post": {
-				"operationId": "post-changestate",
-				"summary": "ChangeState",
-				"responses": {
-					"200": {
-						"description": "Empty HTTP 200 status code",
-						"schema": {
-						}
-					}
-				}
-			}
-		}
-	},
-	"tags": []
+  "swagger": "2.0",
+  "info": {
+    "title": "VIAcode Azure Data Factory Monitoring API",
+    "version": "1.0",
+    "description": "Azure Data Factory Monitoring is the unique tool from VIAcode, integrated with the Azure Portal providing the monitoring capabilities for Azure Data Factory. It includes monitoring scenarios for Azure Data Factory Activities, Pipelines and Triggers. This application enterprise IT team will be able to quickly detect and diagnose Azure Data Factory service and workflows failure and recover it in no time."
+  },
+  "schemes": [
+    "https"
+  ],
+  "securityDefinitions": {
+    "apiKeyHeader": {
+      "type": "apiKey",
+      "name": "Ocp-Apim-Subscription-Key",
+      "in": "header"
+    },
+    "apiKeyQuery": {
+      "type": "apiKey",
+      "name": "subscription-key",
+      "in": "query"
+    }
+  },
+  "security": [
+    {
+      "apiKeyHeader": []
+    },
+    {
+      "apiKeyQuery": []
+    }
+  ],
+  "paths": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.CustomProviders/resourceProviders/public/monitoredADFs/AdfInstances": {
+      "get": {
+        "operationId": "get-adfinstances",
+        "summary": "AdfInstances",
+        "parameters": [
+          {
+            "$ref": "#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupNameParameter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Empty HTTP 200 status code",
+            "schema": {
+            }
+          }
+        }
+      },
+      "put": {
+        "operationId": "put-adfinstances",
+        "summary": "AdfInstances",
+        "parameters": [
+          {
+            "$ref": "#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupNameParameter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Empty HTTP 200 status code",
+            "schema": {
+            }
+          }
+        }
+      },
+      "delete": {
+        "operationId": "delete-adfinstances",
+        "summary": "AdfInstances",
+        "parameters": [
+          {
+            "$ref": "#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupNameParameter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Empty HTTP 200 status code",
+            "schema": {
+            }
+          }
+        }
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.CustomProviders/resourceProviders/public/monitoredADFs/EnableDisable/ChangeState": {
+      "post": {
+        "operationId": "post-changestate",
+        "summary": "ChangeState",
+        "parameters": [
+          {
+            "$ref": "#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupNameParameter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Empty HTTP 200 status code",
+            "schema": {
+            }
+          }
+        }
+      }
+    }
+  },
+  "tags": [],
+  "parameters": {
+    "SubscriptionIdParameter": {
+      "name": "subscriptionId",
+      "in": "path",
+      "required": true,
+      "type": "string",
+      "description": "Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call."
+    },
+    "ResourceGroupNameParameter": {
+      "name": "resourceGroupName",
+      "in": "path",
+      "required": true,
+      "type": "string",
+      "description": "The name of the resource group. The name is case insensitive.",
+      "pattern": "^[-\\w\\._\\(\\)]+$",
+      "minLength": 1,
+      "maxLength": 90
+    }
+  }
 }
