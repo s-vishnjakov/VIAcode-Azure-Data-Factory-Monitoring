@@ -43,8 +43,51 @@
         ],
         "responses": {
           "200": {
-            "description": "Empty HTTP 200 status code",
+            "description": "Available ADF Instances",
             "schema": {
+              "$schema": "http://json-schema.org/draft-04/schema#",
+              "type": "object",
+              "properties": {
+                "value": {
+                  "type": "array",
+                  "items": [
+                    {
+                      "type": "object",
+                      "properties": {
+                        "name": {
+                          "type": "string"
+                        },
+                        "id": {
+                          "type": "string"
+                        },
+                        "subscription": {
+                          "type": "string"
+                        },
+                        "resourceGroup": {
+                          "type": "string"
+                        },
+                        "location": {
+                          "type": "string"
+                        },
+                        "state": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "name",
+                        "id",
+                        "subscription",
+                        "resourceGroup",
+                        "location",
+                        "state"
+                      ]
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "value"
+              ]
             }
           }
         }
