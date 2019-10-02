@@ -1,131 +1,151 @@
 {
-    "swagger": "2.0",
-    "info": {
-        "title": "VIAcode Azure Data Factory Monitoring API",
-        "version": "2018-09-01-preview",
-        "description": "Azure Data Factory Monitoring is the unique tool from VIAcode, integrated with the Azure Portal providing the monitoring capabilities for Azure Data Factory. It includes monitoring scenarios for Azure Data Factory Activities, Pipelines and Triggers. This application enterprise IT team will be able to quickly detect and diagnose Azure Data Factory service and workflows failure and recover it in no time."
+  "swagger": "2.0",
+  "info": {
+    "title": "VIAcode Azure Data Factory Monitoring API",
+    "version": "2018-09-01-preview",
+    "description": "Azure Data Factory Monitoring is the unique tool from VIAcode, integrated with the Azure Portal providing the monitoring capabilities for Azure Data Factory. It includes monitoring scenarios for Azure Data Factory Activities, Pipelines and Triggers. This application enterprise IT team will be able to quickly detect and diagnose Azure Data Factory service and workflows failure and recover it in no time."
+  },
+  "schemes": [
+    "https"
+  ],
+  "securityDefinitions": {
+    "apiKeyHeader": {
+      "type": "apiKey",
+      "name": "Ocp-Apim-Subscription-Key",
+      "in": "header"
     },
-    "schemes": [
-        "https"
-    ],
-    "securityDefinitions": {
-        "apiKeyHeader": {
-            "type": "apiKey",
-            "name": "Ocp-Apim-Subscription-Key",
-            "in": "header"
-        },
-        "apiKeyQuery": {
-            "type": "apiKey",
-            "name": "subscription-key",
-            "in": "query"
-        }
-    },
-    "security": [
-        {
-            "apiKeyHeader": []
-        },
-        {
-            "apiKeyQuery": []
-        }
-    ],
-    "paths": {
-        "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.CustomProviders/resourceProviders/public/monitoredADFs": {
-            "get": {
-                "operationId": "get-adfinstances",
-                "summary": "AdfInstances",
-                "parameters": [
-                    {
-                        "$ref": "#/parameters/SubscriptionIdParameter"
-                    },
-                    {
-                        "$ref": "#/parameters/ResourceGroupNameParameter"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Update Description here",
-                        "schema": {
-                            "$ref": "#/definitions/ListMonitoredADFs"
-                        }
-                    }
-                },
-                "produces": [
-                    "application/json"
-                ],
-                "consumes": [
-                    "application/json"
-                ]
-            }
-        }
-    },
-    "tags": [],
-    "definitions": {
-        "ListMonitoredADFs": {
-            "properties": {
-                "value": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/MonitoredADFs"
-                    },
-                    "description": "Some Description Here."
-                }
-            },
-            "description": "Some Description Here."
-        },
-        "MonitoredADFs": {
-            "required": [
-                "name",
-                "id",
-                "subscription",
-                "resourceGroup",
-                "location",
-                "state"
-            ],
-            "properties": {
-                "name": {
-                    "type": "string",
-                    "description": "The Name Schema"
-                },
-                "id": {
-                    "type": "string",
-                    "description": "The Id Schema"
-                },
-                "subscription": {
-                    "type": "string",
-                    "description": "The Subscription Schema"
-                },
-                "resourceGroup": {
-                    "type": "string",
-                    "description": "The Resourcegroup Schema"
-                },
-                "location": {
-                    "type": "string",
-                    "description": "The Location Schema"
-                },
-                "state": {
-                    "type": "string",
-                    "description": "The State Schema"
-                }
-            }
-        }
-    },
-    "parameters": {
-        "SubscriptionIdParameter": {
-            "name": "subscriptionId",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call."
-        },
-        "ResourceGroupNameParameter": {
-            "name": "resourceGroupName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the resource group. The name is case insensitive.",
-            "pattern": "^[-\\w\\._\\(\\)]+$",
-            "minLength": 1,
-            "maxLength": 90
-        }
+    "apiKeyQuery": {
+      "type": "apiKey",
+      "name": "subscription-key",
+      "in": "query"
     }
+  },
+  "security": [
+    {
+      "apiKeyHeader": []
+    },
+    {
+      "apiKeyQuery": []
+    }
+  ],
+  "paths": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.CustomProviders/resourceProviders/public/monitoredADFs": {
+      "get": {
+        "operationId": "get-adfinstances",
+        "summary": "AdfInstances",
+        "parameters": [
+          {
+            "$ref": "#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupNameParameter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Update Description here",
+            "schema": {
+              "$ref": "#/definitions/ListMonitoredADFs"
+            }
+          }
+        },
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ]
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.CustomProviders/resourceProviders/public/monitoredADFs/EnableDisable": {
+      "post": {
+        "operationId": "post-changestate",
+        "summary": "ChangeState",
+        "parameters": [
+          {
+            "$ref": "#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupNameParameter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Empty HTTP 200 status code",
+            "schema": {}
+          }
+        }
+      }
+    }
+  },
+  "tags": [],
+  "definitions": {
+    "ListMonitoredADFs": {
+      "properties": {
+        "value": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MonitoredADFs"
+          },
+          "description": "Some Description Here."
+        }
+      },
+      "description": "Some Description Here."
+    },
+    "MonitoredADFs": {
+      "required": [
+        "name",
+        "id",
+        "subscription",
+        "resourceGroup",
+        "location",
+        "state"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "The Name Schema"
+        },
+        "id": {
+          "type": "string",
+          "description": "The Id Schema"
+        },
+        "subscription": {
+          "type": "string",
+          "description": "The Subscription Schema"
+        },
+        "resourceGroup": {
+          "type": "string",
+          "description": "The Resourcegroup Schema"
+        },
+        "location": {
+          "type": "string",
+          "description": "The Location Schema"
+        },
+        "state": {
+          "type": "string",
+          "description": "The State Schema"
+        }
+      }
+    }
+  },
+  "parameters": {
+    "SubscriptionIdParameter": {
+      "name": "subscriptionId",
+      "in": "path",
+      "required": true,
+      "type": "string",
+      "description": "Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call."
+    },
+    "ResourceGroupNameParameter": {
+      "name": "resourceGroupName",
+      "in": "path",
+      "required": true,
+      "type": "string",
+      "description": "The name of the resource group. The name is case insensitive.",
+      "pattern": "^[-\\w\\._\\(\\)]+$",
+      "minLength": 1,
+      "maxLength": 90
+    }
+  }
 }
