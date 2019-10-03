@@ -8,6 +8,8 @@ Deployment does not require any additional parameters.
 < deployment ui screen here >  
 When the deployment succeeds, a new Managed application is deployed to the RG you provided.
 Additionally, the following resources are deployed in the managed RG:
+
+
 | Name                                                   | Type                 | Description                                                                                                                                                                                                                     |
 |--------------------------------------------------------|----------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | api-*                                                  | Function App         | Main monitoring worker. It discovers available ADF instances and deployes monitoring resources for each of them. Moreover, it provides an API for Managed Application UI to let you see monitored ADF instances and manage them |
@@ -15,8 +17,7 @@ Additionally, the following resources are deployed in the managed RG:
 | sa*                                                    | Storage account      | The function app uses it for its internal needs. Moreover it stores other internal data - ADF instances monitoring state, etc.                                                                                                  |
 | ai-*                                                   | Application Insights | Used for API diagnostics and hosts troubleshooting guides                                                                                                                                                                       |
 | * (VIAcode Data Factory Runtime Troubleshooting Guide) | Workbook             | ADF integration runtime troubleshooting guide                                                                                                                                                                                   |
-| * (VIAcode Azure Data Factory Troubleshooting Guide)   | Workbook             | ADF pipeline failures troubleshooting guide                                                                                                                                                                                     |  
-
+| * (VIAcode Azure Data Factory Troubleshooting Guide)   | Workbook             | ADF pipeline failures troubleshooting guide                                                                                                                                                                                     |
 ## Additional Setup
 When the solution is just deployed, the monitoring worker does not have any access to your environment, so it will do nothing. You should provide it with a read permission to your subscription(s) as it is mention in the deployment UI.
 Go to the deployed managed application and open the Parameters and Outputs blade. Copy the value of the monitoring Identity output.  
