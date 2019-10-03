@@ -54,7 +54,7 @@ When an alert is about an integration runtime overload, it will lead you to the 
 1. Examine the integration runtime metrics.
 2. Select one of the integration runtime nodes - the charts will be filtered by the node
 3. If the runtime VM is available, you will see the tile with the VM details.
-4. Depending on the data you see in the metric charts, you may decide to scale up your VM - click the Resize link on the tile, or make some other VM setup (e.g. restart it) - click Overview link  
+4. Depending on the data you see in the metric charts, you may decide to scale up your VM - click the `Resize` link on the tile, or make some other VM setup (e.g. restart it) - click `Overview` link  
 < screenshot here >
 # Solution Management
 ## Disable Monitoring for a Specific Instance
