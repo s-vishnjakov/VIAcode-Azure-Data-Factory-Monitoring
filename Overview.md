@@ -45,7 +45,7 @@ When an alert is about a pipeline/trigger/activity failure, it will lead you to 
     * Click the failed activity to see the detailed error message.
 2. If you see that the execution sequence is wrong or the error message is quite clear and you know what to do, scroll down and click the `View Pipeline` button to edit the pipeline and fix the issue.
 3. If the error message does not help, have a look at the integration runtime metrics collected during the selected run.  
-   The metrics might show that your integration runtime is overloaded and might need to be scaled up (click the link to see the runtime details - NOT IMPLEMENTED)
+   The metrics might show that your integration runtime is overloaded and might need to be scaled up
    Other way is to set up the query that the pipeline executes to make it more lightweight. Click the `View Runtime` link in the bottom of the guide , select the failed activity and set it up.
 4. If the error message is unclear and the metrics show normal values, you may need to have a more detailed overview of the failed run. Click `View Run` to see the run details in a Data Factory UI  
 < screenshot here >
