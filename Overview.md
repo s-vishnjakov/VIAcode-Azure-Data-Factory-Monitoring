@@ -5,7 +5,7 @@ This application enterprise IT team will be able to quickly detect and diagnose 
 # Installation and Setup
 ## Deployment
 Deployment does not require any additional parameters.  
-< deployment ui screen here >  
+![Deployment UI](Artifacts/deploymentUI.PNG)  
 When the deployment succeeds, a new Managed application is deployed to the RG you provided.
 Additionally, the following resources are deployed in the managed RG:
 
@@ -25,7 +25,7 @@ Go to the deployed managed application and open the Parameters and Outputs blade
 Provide this identity with a Reader role to your subscription ([more info](https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/howto-assign-access-portal))
 # Out of the Box Experience
 Once the setup is complete, you can see all available ADF instances on the Data Factories blade in the app UI.  
-< screenshot here >  
+![Data Factories](Artifacts/DataFactories.PNG)  
 When the instance is just discovered its monitoring state is Pending. Once all the monitoring resources for this instance are deployed, the state changes to Enabled.
 The monitoring solution provides a bunch of alert rules for each ADF instance and two troubleshooting guides.
 ## Alert Rules
@@ -48,21 +48,21 @@ When an alert is about a pipeline/trigger/activity failure, it will lead you to 
    The metrics might show that your integration runtime is overloaded and might need to be scaled up
    Other way is to set up the query that the pipeline executes to make it more lightweight. Click the `View Runtime` link in the bottom of the guide, select the failed activity and set it up.
 4. If the error message is unclear and the metrics show normal values, you may need to have a more detailed overview of the failed run. Click `View Run` to see the run details in a Data Factory UI  
-< screenshot here >
+![Pipeline TSG](Artifacts/PipelineTSG.PNG)
 ### Integration runtime troubleshooting guide.
 When an alert is about an integration runtime overload, it will lead you to the integration runtime troubleshooting guide. Here is what you can do here:
 1. Examine the integration runtime metrics.
 2. Select one of the integration runtime nodes - the charts will be filtered by the node
 3. If the runtime VM is available, you will see the tile with the VM details.
 4. Depending on the data you see in the metric charts, you may decide to scale up your VM - click the `Resize` link on the tile, or make some other VM setup (e.g. restart it) - click `Overview` link  
-< screenshot here >
+![Runtime TSG](Artifacts/RuntimeTSG.PNG)
 # Solution Management
 ## Disable Monitoring for a Specific Instance
 Out of the box the monitoring worker will enable monitoring for each ADF instance it discovers. You can disable monitoring for a specific instance. To do it:
 1. Open the Data Factories blade in the app UI. 
 2. Select the ADF instance you do not want to monitor
 3. Click `Enable/Disable` button on the top.  
-< screenshot here >  
+![Enable/Disable](Artifacts/EnableDisable.PNG) 
 Once you do it, the monitoring state will change di Disabled and all alert rules connected to this instance will be deleted.
 
 If you want to enable the monitoring back, you should select the instance and click again `Enable/Disable` button. The state will change to Pending and then to Enabled in about 5 minutes.
