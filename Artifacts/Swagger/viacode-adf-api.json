@@ -29,10 +29,10 @@
     }
   ],
   "paths": {
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.CustomProviders/resourceProviders/public/monitoredADFs": {
-      "get": {
-        "operationId": "get-adfinstances",
-        "summary": "AdfInstances",
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.CustomProviders/resourceProviders/public/associations": {
+      "post": {
+        "operationId": "post-onboardadf",
+        "summary": "OnboardADF",
         "parameters": [
           {
             "$ref": "#/parameters/SubscriptionIdParameter"
@@ -45,7 +45,7 @@
           "200": {
             "description": "Update Description here",
             "schema": {
-              "$ref": "#/definitions/ListMonitoredADFs"
+              "$ref": "#/definitions/MonitoredADFs"
             }
           }
         },
@@ -95,20 +95,13 @@
     "MonitoredADFs": {
       "required": [
         "name",
-        "id",
         "subscription",
-        "resourceGroup",
-        "location",
-        "state"
+        "resourceGroup"
       ],
       "properties": {
         "name": {
           "type": "string",
           "description": "The Name Schema"
-        },
-        "id": {
-          "type": "string",
-          "description": "The Id Schema"
         },
         "subscription": {
           "type": "string",
@@ -117,14 +110,6 @@
         "resourceGroup": {
           "type": "string",
           "description": "The Resourcegroup Schema"
-        },
-        "location": {
-          "type": "string",
-          "description": "The Location Schema"
-        },
-        "state": {
-          "type": "string",
-          "description": "The State Schema"
         }
       }
     }
