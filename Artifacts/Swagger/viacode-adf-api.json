@@ -57,7 +57,7 @@
         ]
       }
     },
-	"/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.CustomProviders/resourceProviders/public/associations": {
+	"/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.CustomProviders/resourceProviders/public/associations/{associationId}": {
       "put": {
         "operationId": "put-adfinstances",
         "summary": "AdfInstances",
@@ -67,6 +67,9 @@
           },
           {
             "$ref": "#/parameters/ResourceGroupNameParameter"
+          },
+          {
+            "$ref": "#/parameters/AssociationIdParameter"
           }
         ],
         "responses": {
@@ -85,6 +88,9 @@
           },
           {
             "$ref": "#/parameters/ResourceGroupNameParameter"
+          },
+          {
+            "$ref": "#/parameters/AssociationIdParameter"
           }
         ],
         "responses": {
@@ -184,6 +190,13 @@
       "pattern": "^[-\\w\\._\\(\\)]+$",
       "minLength": 1,
       "maxLength": 90
+    },
+	"AssociationIdParameter": {
+      "name": "associationId",
+      "in": "path",
+      "required": true,
+      "type": "string",
+      "description": "Association Id"
     }
   }
 }
