@@ -70,6 +70,9 @@
           },
           {
             "$ref": "#/parameters/AssociationIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ApiVersionParameter"
           }
         ],
         "responses": {
@@ -84,6 +87,30 @@
         "consumes": [
           "application/json"
         ]
+      },
+	  "delete": {
+        "operationId": "delete-adfinstances",
+        "summary": "AdfInstances",
+        "parameters": [
+          {
+            "$ref": "#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupNameParameter"
+          },
+          {
+            "$ref": "#/parameters/AssociationIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ApiVersionParameter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Empty HTTP 200 status code",
+            "schema": {}
+          }
+        }
       }
     },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.CustomProviders/resourceProviders/public/monitoredADFs/EnableDisable": {
@@ -176,12 +203,19 @@
       "minLength": 1,
       "maxLength": 90
     },
-	"AssociationIdParameter": {
+    "AssociationIdParameter": {
       "name": "associationId",
       "in": "path",
       "required": true,
       "type": "string",
       "description": "Association Id"
+    },
+    "ApiVersionParameter": {
+      "name": "api-version",
+      "in": "query",
+      "required": true,
+      "type": "string",
+      "description": "Client Api Version."
     }
   }
 }
