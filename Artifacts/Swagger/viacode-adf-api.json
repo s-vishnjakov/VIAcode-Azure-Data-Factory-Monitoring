@@ -84,27 +84,6 @@
         "consumes": [
           "application/json"
         ]
-      },
-      "delete": {
-        "operationId": "delete-adfinstances",
-        "summary": "AdfInstances",
-        "parameters": [
-          {
-            "$ref": "#/parameters/SubscriptionIdParameter"
-          },
-          {
-            "$ref": "#/parameters/ResourceGroupNameParameter"
-          },
-          {
-            "$ref": "#/parameters/AssociationIdParameter"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Empty HTTP 200 status code",
-            "schema": {}
-          }
-        }
       }
     },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.CustomProviders/resourceProviders/public/monitoredADFs/EnableDisable": {
