@@ -57,7 +57,7 @@
         ]
       }
     },
-	"/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.CustomProviders/resourceProviders/public/associations/{associationId}": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.CustomProviders/resourceProviders/public/associations/{associationId}": {
       "put": {
         "operationId": "put-adfinstances",
         "summary": "AdfInstances",
@@ -77,9 +77,15 @@
             "description": "Empty HTTP 200 status code",
             "schema": {}
           }
-        }
+        },
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ]
       },
-	  "delete": {
+      "delete": {
         "operationId": "delete-adfinstances",
         "summary": "AdfInstances",
         "parameters": [
