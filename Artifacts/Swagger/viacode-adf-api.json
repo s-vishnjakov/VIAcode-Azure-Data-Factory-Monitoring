@@ -70,7 +70,25 @@
           },
           {
             "$ref": "#/parameters/AssociationIdParameter"
-          }
+          },
+		  {
+		    "name": "X-MS-CustomProviders-RequestPath",
+		    "in": "header",
+		    "required": true,
+		    "type": "string"
+		  },
+		  {
+		    "name": "X-MS-CustomProviders-ExtensionPath",
+		    "in": "header",
+		    "required": true,
+		    "type": "string"
+		  },
+		  {
+		    "name": "X-MS-CustomProviders-ExtendedResource",
+		    "in": "header",
+		    "required": true,
+		    "type": "string"
+		  }
         ],
         "responses": {
           "200": {
