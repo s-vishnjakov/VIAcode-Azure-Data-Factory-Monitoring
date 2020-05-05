@@ -72,6 +72,9 @@
             "$ref": "#/parameters/AssociationIdParameter"
           },
 		  {
+            "$ref": "#/parameters/ApiVersionParameter"
+          },
+		  {
             "name": "parameters",
             "in": "body",
             "required": true,
@@ -226,6 +229,13 @@
       "required": true,
       "type": "string",
       "description": "Association Id"
+    },
+    "ApiVersionParameter": {
+      "name": "api-version",
+      "in": "query",
+      "required": true,
+      "type": "string",
+      "description": "Client Api Version."
     }
   }
 }
