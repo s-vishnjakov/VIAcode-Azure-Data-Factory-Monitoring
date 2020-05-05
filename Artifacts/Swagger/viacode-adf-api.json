@@ -56,7 +56,63 @@
           "application/json"
         ]
       }
-    },    
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.CustomProviders/resourceProviders/public/associations/{associationId}": {
+      "put": {
+        "operationId": "put-adfinstances",
+        "summary": "AdfInstances",
+        "parameters": [
+          {
+            "$ref": "#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupNameParameter"
+          },
+          {
+            "$ref": "#/parameters/AssociationIdParameter"
+          },
+		  {
+            "$ref": "#/parameters/ApiVersionParameter"
+          },
+		  {
+            "name": "parameters",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/OnboardingParameters"
+            },
+            "description": "The parameters required call resource onboarding."
+		  }
+        ],
+        "responses": {
+          "200": {
+            "description": "Empty HTTP 200 status code",
+            "schema": {}
+          }
+        }
+      },	  
+      "delete": {
+        "operationId": "delete-adfinstances",
+        "summary": "AdfInstances",
+        "parameters": [
+          {
+            "$ref": "#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupNameParameter"
+          },
+          {
+            "$ref": "#/parameters/AssociationIdParameter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Empty HTTP 200 status code",
+            "schema": {}
+          }
+        }
+      }
+    },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.CustomProviders/resourceProviders/public/monitoredADFs/EnableDisable": {
       "post": {
         "operationId": "post-changestate",
@@ -138,10 +194,6 @@
             "targetResourceId": {
               "type": "string",
               "description": "Target resource id"
-            },
-			"extensionId": {
-              "type": "string",
-              "description": "Extension id"
             }
 		  },
 		  "required": [
