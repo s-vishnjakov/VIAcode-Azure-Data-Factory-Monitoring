@@ -186,7 +186,16 @@
         "properties": {
           "readOnly": true,
           "type": "object",
-          "description": "Association properties"
+          "description": "Association properties",
+		  "properties": {
+            "targetResourceId": {
+              "type": "string",
+              "description": "Target resource id"
+            }
+		  },
+		  "required": [
+		    "targetResourceId"
+		  ]
         }
       },
       "description": "Onboarding Description.",
