@@ -72,22 +72,13 @@
             "$ref": "#/parameters/AssociationIdParameter"
           },
 		  {
-		    "name": "X-MS-CustomProviders-RequestPath",
-		    "in": "header",
-		    "required": true,
-		    "type": "string"
-		  },
-		  {
-		    "name": "X-MS-CustomProviders-ExtensionPath",
-		    "in": "header",
-		    "required": true,
-		    "type": "string"
-		  },
-		  {
-		    "name": "X-MS-CustomProviders-ExtendedResource",
-		    "in": "header",
-		    "required": true,
-		    "type": "string"
+            "name": "parameters",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/OnboardingParameters"
+            },
+            "description": "The parameters required call resource onboarding."
 		  }
         ],
         "responses": {
@@ -95,12 +86,9 @@
             "description": "Empty HTTP 200 status code",
             "schema": {}
           }
-        },
-        "consumes": [
-          "application/json"
-        ]
-      },
-	  "delete": {
+        }
+      },	  
+      "delete": {
         "operationId": "delete-adfinstances",
         "summary": "AdfInstances",
         "parameters": [
@@ -192,6 +180,17 @@
           "description": "The State Schema"
         }
       }
+    },
+	"OnboardingParameters": {
+      "properties": {
+        "properties": {
+          "readOnly": true,
+          "type": "object",
+          "description": "Association properties"
+        }
+      },
+      "description": "Onboarding Description.",
+      "x-ms-azure-resource": true
     }
   },
   "parameters": {
