@@ -71,10 +71,10 @@
           {
             "$ref": "#/parameters/AssociationIdParameter"
           },
-		  {
+          {
             "$ref": "#/parameters/ApiVersionParameter"
           },
-		  {
+          {
             "name": "parameters",
             "in": "body",
             "required": true,
@@ -82,7 +82,7 @@
               "$ref": "#/definitions/OnboardingParameters"
             },
             "description": "The parameters required call resource onboarding."
-		  }
+          }
         ],
         "responses": {
           "200": {
@@ -90,7 +90,7 @@
             "schema": {}
           }
         }
-      },	  
+      },
       "delete": {
         "operationId": "delete-adfinstances",
         "summary": "AdfInstances",
@@ -169,26 +169,20 @@
         }
       }
     },
-	"OnboardingParameters": {
+    "OnboardingParameters": {
       "properties": {
         "properties": {
-          "readOnly": true,
           "type": "object",
           "description": "Association properties",
-		  "properties": {
+          "properties": {
             "targetResourceId": {
               "type": "string",
-              "description": "Target resource id"
-            },
-			"extensionId": {
-              "type": "string",
-              "description": "Extension id"
+              "description": "Target resource id",
             }
-		  },
-		  "required": [
-		    "targetResourceId",
-			"extensionId"
-		  ]
+          },
+          "required": [
+            "targetResourceId"
+          ]
         }
       },
       "description": "Onboarding Description.",
