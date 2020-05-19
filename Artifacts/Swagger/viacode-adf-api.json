@@ -177,7 +177,11 @@
           "properties": {
             "targetResourceId": {
               "type": "string",
-              "description": "Target resource id",
+              "description": "Target resource id"
+            },
+            "extensionId": {
+              "type": "string",
+              "description": "Extension id"
             }
           },
           "required": [
