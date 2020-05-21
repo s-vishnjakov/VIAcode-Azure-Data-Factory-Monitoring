@@ -183,10 +183,7 @@
               "type": "string",
               "description": "Extension id"
             }
-          },
-          "required": [
-            "targetResourceId"
-          ]
+          }
         }
       },
       "description": "Onboarding Description.",
