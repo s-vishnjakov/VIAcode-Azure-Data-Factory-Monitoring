@@ -71,10 +71,10 @@
           {
             "$ref": "#/parameters/AssociationIdParameter"
           },
-		  {
+          {
             "$ref": "#/parameters/ApiVersionParameter"
           },
-		  {
+          {
             "name": "parameters",
             "in": "body",
             "required": true,
@@ -82,7 +82,7 @@
               "$ref": "#/definitions/OnboardingParameters"
             },
             "description": "The parameters required call resource onboarding."
-		  }
+          }
         ],
         "responses": {
           "200": {
@@ -90,7 +90,7 @@
             "schema": {}
           }
         }
-      },	  
+      },
       "delete": {
         "operationId": "delete-adfinstances",
         "summary": "AdfInstances",
@@ -184,26 +184,47 @@
         }
       }
     },
-	"OnboardingParameters": {
+    "OnboardingParameters": {
       "properties": {
         "properties": {
-          "readOnly": true,
           "type": "object",
           "description": "Association properties",
-		  "properties": {
+          "properties": {
             "targetResourceId": {
               "type": "string",
               "description": "Target resource id"
             },
-			"extensionId": {
+            "extensionId": {
               "type": "string",
               "description": "Extension id"
             }
-		  },
-		  "required": [
-		    "targetResourceId",
-			"extensionId"
-		  ]
+          }
+        },
+        "id": {
+          "readOnly": true,
+          "type": "string",
+          "description": "Resource Id"
+        },
+        "name": {
+          "readOnly": true,
+          "type": "string",
+          "description": "Resource name"
+        },
+        "type": {
+          "readOnly": true,
+          "type": "string",
+          "description": "Resource type"
+        },
+        "location": {
+          "type": "string",
+          "description": "Resource location"
+        },
+        "tags": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          },
+          "description": "Resource tags"
         }
       },
       "description": "Onboarding Description.",
