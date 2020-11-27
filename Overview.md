@@ -23,6 +23,22 @@ When the solution is just deployed, the monitoring worker does not have any acce
 Go to the deployed managed application and open the Parameters and Outputs blade. Copy the value of the monitoring Identity output.  
 < screenshot here >  
 Provide this identity with a Reader role to your subscription ([more info](https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/howto-assign-access-portal))
+
+## Configure Diagnostic Settings
+Create diagnostic setting to send platform logs and metrics to Log Analytics Workspace.
+Go to the deployed managed application and open the Activity Log blade. Click on the "Diagnostic settings" button.
+
+![Diagnostic Settings](Artifacts/DiagnosticSettings.PNG)
+
+Click '+ Add Diagnostic setting' to configure the collection of data:
+1. Specify Diagnostic setting name. 
+2. Select the Required categories of data to send.
+3. Select "Send to Log Analytics workspace" chekcbox.
+4. Select the subscription that contains the Log Analytics workspace and workspace itself.
+5. Save Diagnostic setting configuration.
+
+![Diagnostic Setting Config](Artifacts/DiagnisticSettingConfig.PNG)
+
 # Out of the Box Experience
 Once the setup is complete, you can see all available ADF instances on the Data Factories blade in the app UI.  
 ![Data Factories](Artifacts/DataFactories.PNG)  
@@ -40,19 +56,19 @@ Troubleshooting guides help you to understand what is exactly wrong with your AD
 ### Pipeline troubleshooting guide.
 When an alert is about a pipeline/trigger/activity failure, it will lead you to the pipeline troubleshooting guide. Here is what you can do here:
 1. Examine the recently failed pipelines (or pipelines with failed activities or all pipelines):
-    * Click on one of the pipelines and have a look at the details below
+    * Click on one of the pipelines and have a look at the details below.
     * Overview the activity log to see which activity executed before the failure and which exact activity failed.
     * Click the failed activity to see the detailed error message.
 2. If you see that the execution sequence is wrong or the error message is quite clear and you know what to do, scroll down and click the `View Pipeline` button to edit the pipeline and fix the issue.
 3. If the error message does not help, have a look at the integration runtime metrics collected during the selected run.  
-   The metrics might show that your integration runtime is overloaded and might need to be scaled up
+   The metrics might show that your integration runtime is overloaded and might need to be scaled up.
    Other way is to set up the query that the pipeline executes to make it more lightweight. Click the `View Runtime` link in the bottom of the guide, select the failed activity and set it up.
 4. If the error message is unclear and the metrics show normal values, you may need to have a more detailed overview of the failed run. Click `View Run` to see the run details in a Data Factory UI  
 ![Pipeline TSG](Artifacts/PipelineTSG.PNG)
 ### Integration runtime troubleshooting guide.
 When an alert is about an integration runtime overload, it will lead you to the integration runtime troubleshooting guide. Here is what you can do here:
 1. Examine the integration runtime metrics.
-2. Select one of the integration runtime nodes - the charts will be filtered by the node
+2. Select one of the integration runtime nodes - the charts will be filtered by the node.
 3. If the runtime VM is available, you will see the tile with the VM details.
 4. Depending on the data you see in the metric charts, you may decide to scale up your VM - click the `Resize` link on the tile, or make some other VM setup (e.g. restart it) - click `Overview` link  
 ![Runtime TSG](Artifacts/RuntimeTSG.PNG)
