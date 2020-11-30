@@ -27,12 +27,12 @@ Provide this identity with a Reader role to your subscription ([more info](https
 ## Configure ADF Diagnostic Settings
 Configure diagnostic setting to send platform logs and metrics to Log Analytics Workspace.
 
-![Log Analytics Workspace](Artifacts/LogAnalyticsWorkspace.PNG)
-1. Go to Log Analytics workspace on the blade menu.
-2. Under Monitoring section select "Diagnostic Settings". Diagnostic settings menu will opens.
+![Diagnostic Settings](Artifacts/DiagnosticSettings.PNG)
+1. Go to the menu of the created Data Factory.
+2. On the Data Factory's blade menu select "Diagnostic Settings". Diagnostic settings menu will opens.
 3. Click on "+Add diagnostic Setting".
 4. Specify a name for the Diagnostic setting. 
-5. Select the required categories to send.
+5. Select the required categories to send: ActivityRuns, PipelineRuns, TriggerRuns, AllMetrics.
 6. Select the subscription that contains VIAcode-Azure-Data-Factory monitoring and workspace itself.
 7. Save Diagnostic setting configuration.
 
