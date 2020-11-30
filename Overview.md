@@ -2,6 +2,24 @@
 Azure Data Factory Monitoring is the unique tool from VIAcode, integrated with the Azure Portal providing the monitoring capabilities for Azure Data Factory. It includes monitoring scenarios for Azure Data Factory Activities, Pipelines and Triggers. 
 
 This application enterprise IT team will be able to quickly detect and diagnose Azure Data Factory service and workflows failure and recover it in no time. 
+
+## Configure ADF Diagnostic Settings
+Configure diagnostic setting to send platform logs and metrics to Log Analytics Workspace.
+
+![Diagnostic Settings](Artifacts/DiagnosticSettings.PNG)
+1. Go to the menu of the Data Factory which you are going to monitor.
+2. On the Data Factory's blade menu select "Diagnostic Settings". Diagnostic settings menu will opens.
+3. Click on "+Add diagnostic Setting".
+4. Specify a name for the Diagnostic setting. 
+5. Select the required log categories to send: ActivityRuns, PipelineRuns, TriggerRuns, AllMetrics.
+6. Under "Destination details" select "Send to Log Analytics workspace". 
+7. Specify a Subscription that contains "Log Analytic workspace" to stream the logs.
+8. For the Destination table specify Resource-specific mode, since this makes the data easier to manage and may help you to avoid complex migrations at a later date.
+7. Save Diagnostic setting configuration.
+
+![Save Diagnostic Setting](Artifacts/SaveDiagnosticSetting.PNG)
+
+
 # Installation and Setup
 ## Deployment
 Deployment does not require any additional parameters.  
@@ -23,20 +41,6 @@ When the solution is just deployed, the monitoring worker does not have any acce
 Go to the deployed managed application and open the Parameters and Outputs blade. Copy the value of the monitoring Identity output.  
 < screenshot here >  
 Provide this identity with a Reader role to your subscription ([more info](https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/howto-assign-access-portal))
-
-## Configure ADF Diagnostic Settings
-Configure diagnostic setting to send platform logs and metrics to Log Analytics Workspace.
-
-![Diagnostic Settings](Artifacts/DiagnosticSettings.PNG)
-1. Go to the menu of the created Data Factory.
-2. On the Data Factory's blade menu select "Diagnostic Settings". Diagnostic settings menu will opens.
-3. Click on "+Add diagnostic Setting".
-4. Specify a name for the Diagnostic setting. 
-5. Select the required categories to send: ActivityRuns, PipelineRuns, TriggerRuns, AllMetrics.
-6. Select the subscription that contains VIAcode-Azure-Data-Factory monitoring and workspace itself.
-7. Save Diagnostic setting configuration.
-
-![Save Diagnostic Setting](Artifacts/SaveDiagnosticSetting.PNG)
 
 # Out of the Box Experience
 Once the setup is complete, you can see all available ADF instances on the Data Factories blade in the app UI.  
