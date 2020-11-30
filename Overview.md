@@ -24,20 +24,18 @@ Go to the deployed managed application and open the Parameters and Outputs blade
 < screenshot here >  
 Provide this identity with a Reader role to your subscription ([more info](https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/howto-assign-access-portal))
 
-## Configure Diagnostic Settings
-Create diagnostic setting to send platform logs and metrics to Log Analytics Workspace.
-Go to the deployed managed application and open the Activity Log blade. Click on the "Diagnostic settings" button.
+## Configure ADF Diagnostic Settings
+Configure diagnostic setting to send platform logs and metrics to Log Analytics Workspace.
+![Log Analytics Workspace](Artifacts/LogAnalyticsWorkspace.PNG)
+1. Go to Log Analytics workspace on the blade menu.
+2. Under Monitoring section select "Diagnostic Settings". Diagnostic settings menu will opens.
+3. Click on "+Add diagnostic Setting".
+4. Specify a name for the Diagnostic setting. 
+5. Select the required categories to send.
+6. Select the subscription that contains VIAcode-Azure-Data-Factory monitoring and workspace itself.
+7. Save Diagnostic setting configuration.
+![Save Diagnostic Setting](Artifacts/SaveDiagnosticSetting.PNG)
 
-![Diagnostic Settings](Artifacts/DiagnosticSettings.PNG)
-
-Click '+ Add Diagnostic setting' to configure the collection of data:
-1. Specify Diagnostic setting name. 
-2. Select the Required categories of data to send.
-3. Select "Send to Log Analytics workspace" chekcbox.
-4. Select the subscription that contains the Log Analytics workspace and workspace itself.
-5. Save Diagnostic setting configuration.
-
-![Diagnostic Setting Config](Artifacts/DiagnisticSettingConfig.PNG)
 
 # Out of the Box Experience
 Once the setup is complete, you can see all available ADF instances on the Data Factories blade in the app UI.  
