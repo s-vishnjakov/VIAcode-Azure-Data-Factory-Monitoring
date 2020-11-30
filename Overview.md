@@ -28,6 +28,19 @@ Once the setup is complete, you can see all available ADF instances on the Data 
 ![Data Factories](Artifacts/DataFactories.PNG)  
 When the instance is just discovered its monitoring state is Pending. Once all the monitoring resources for this instance are deployed, the state changes to Enabled.
 The monitoring solution provides a bunch of alert rules for each ADF instance and two troubleshooting guides.
+## Configure ADF Diagnostic Settings
+Configure diagnostic setting to send platform logs and metrics to Log Analytics Workspace.
+![Log Analytics Workspace](Artifacts/LogAnalyticsWorkspace.PNG)
+1. Go to Log Analytics workspace on the blade menu.
+2. Under Monitoring section select "Diagnostic Settings". Diagnostic settings menu will opens.
+3. Click on "+Add diagnostic Setting".
+4. Specify a name for the Diagnostic setting. 
+5. Select the required categories to send.
+6. Select the subscription that contains VIAcode-Azure-Data-Factory monitoring and workspace itself.
+7. Save Diagnostic setting configuration.
+![Save Diagnostic Setting](Artifacts/SaveDiagnosticSetting.PNG)
+
+
 ## Alert Rules
 | Name                                                                                                 | Frequency  | Time Window | Description                                              |
 |------------------------------------------------------------------------------------------------------|------------|-------------|----------------------------------------------------------|
